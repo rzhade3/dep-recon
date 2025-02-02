@@ -9,7 +9,7 @@ import (
 
 func TestPullGolangDependencyReadme(t *testing.T) {
 	htmlResponse, err := os.ReadFile("../../fixtures/golang_readme.html")
-	expected_readme := "Package gabs implements a wrapper around creating and parsing unknown or dynamic map structures resulting from JSON parsing."
+	expectedReadme := "Package gabs implements a wrapper around creating and parsing unknown or dynamic map structures resulting from JSON parsing."
 	if err != nil {
 		t.Errorf("Expected nil, got %s", err)
 		return
@@ -28,8 +28,8 @@ func TestPullGolangDependencyReadme(t *testing.T) {
 	if err != nil {
 		t.Errorf("unexpected error: %v", err)
 	}
-	if readme != expected_readme {
-		t.Errorf("Expected %s, got %s", expected_readme, readme)
+	if readme != expectedReadme {
+		t.Errorf("Expected %s, got %s", expectedReadme, readme)
 	}
 }
 

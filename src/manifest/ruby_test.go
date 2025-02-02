@@ -8,9 +8,9 @@ import (
 )
 
 func TestPullRubygemsReadme(t *testing.T) {
-	expected_readme := "This is the readme for the package"
+	expectedReadme := "This is the readme for the package"
 	// Interpolate into a JSON body for the mock response
-	mockResponse := fmt.Sprintf(`{"info": "%s"}`, expected_readme)
+	mockResponse := fmt.Sprintf(`{"info": "%s"}`, expectedReadme)
 
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Check the request
@@ -29,8 +29,8 @@ func TestPullRubygemsReadme(t *testing.T) {
 	if err != nil {
 		t.Errorf("Unexpected error: %s", err)
 	}
-	if readme != expected_readme {
-		t.Errorf("Expected %s, got %s", expected_readme, readme)
+	if readme != expectedReadme {
+		t.Errorf("Expected %s, got %s", expectedReadme, readme)
 	}
 }
 

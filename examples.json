@@ -1,0 +1,7 @@
+{
+	"Casbin is a powerful and efficient open-source access control library for Golang projects.": ["authorization"],
+	"A simple and easy to use cryptographic library for .NET Core 2.0+ and .NET Framework 4.6+ that wraps the .NET Core APIs to facilitate the most common cryptographic operations.": ["cryptography"],
+	"Designed to work with any OAuth service, it supports OAuth 1.0, 1.0A and 2.0.": ["authentication"],
+	"Mustache is a logic-less template syntax. It can be used for HTML, config files, source code - anything.": ["rendering"],
+	"Puma is a simple, fast, multi-threaded, and highly parallel HTTP 1.1 server for Ruby/Rack applications.": ["network requests"]
+}

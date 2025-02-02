@@ -20,12 +20,12 @@ var DefaultRustRegistryURL = "https://crates.io"
 
 func (r Rust) PullDependencyReadme(dependency, version string) (string, error) {
 	// The api_path looks something like "/api/v1/crates/{crate_name}/{version}/readme"
-	crates_url, err := url.JoinPath(r.RegistryURL, "api/v1/crates", dependency, version, "readme")
+	cratesUrl, err := url.JoinPath(r.RegistryURL, "api/v1/crates", dependency, version, "readme")
 	if err != nil {
 		return "", err
 	}
 	// Fetch the README from the crates_url
-	res, err := http.Get(crates_url)
+	res, err := http.Get(cratesUrl)
 	if err != nil {
 		return "", err
 	}

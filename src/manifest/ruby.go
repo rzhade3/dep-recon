@@ -74,12 +74,12 @@ func (r Ruby) readDependencyFile() (string, error) {
 }
 
 func (r Ruby) ListDependencies() (DependencyList, error) {
-	gem_regex := regexp.MustCompile(`gem ['"](?P<name>[^'"]+)['"](, ['"](?P<version>[^'"]+)['"])?`)
+	gemRegex := regexp.MustCompile(`gem ['"](?P<name>[^'"]+)['"](, ['"](?P<version>[^'"]+)['"])?`)
 	content, err := r.readDependencyFile()
 	if err != nil {
 		return DependencyList{}, err
 	}
-	matches := gem_regex.FindAllStringSubmatch(content, -1)
+	matches := gemRegex.FindAllStringSubmatch(content, -1)
 	depList := DependencyList{
 		DevDependencies: map[string]string{},
 		Dependencies:    map[string]string{},

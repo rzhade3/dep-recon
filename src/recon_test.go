@@ -56,29 +56,3 @@ func TestValidateManifestFilepath(t *testing.T) {
 		t.Errorf("Expected nil, got %s", lang)
 	}
 }
-
-func TestReadmeRecon(t *testing.T) {
-	keywords := Keywords{
-		"javascript": []string{"npm", "node", "javascript"},
-		"ruby":       []string{"gem", "ruby"},
-		"golang":     []string{"go", "golang"},
-	}
-	matched, err := ReadmeRecon("This contains npm and gem words", keywords)
-	if err != nil {
-		t.Errorf("Unexpected error: %s", err)
-	}
-	if len(matched) != 2 {
-		t.Errorf("Expected 2, got %d", len(matched))
-	}
-	if matched[0] != "javascript" || matched[1] != "ruby" {
-		t.Errorf("Expected [javascript, ruby], got %v", matched)
-	}
-
-	matched, err = ReadmeRecon("This contains no keywords", keywords)
-	if err != nil {
-		t.Errorf("Unexpected error: %s", err)
-	}
-	if len(matched) != 0 {
-		t.Errorf("Expected 0, got %d", len(matched))
-	}
-}

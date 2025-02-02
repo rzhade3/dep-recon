@@ -4,8 +4,10 @@ Dep Recon is a tool to help quickly understand the dependencies of a project, an
 
 It works by parsing the manifest file, then downloading READMEs for each dependency from the corresponding package manager. It then parses the READMEs to keyword match against certain keywords (see `keywords.json`).
 
+It also contains an AI integration to help refine the matching, if keyword matching is too noisy.
+
 ## Usage
 
 ```bash
-./dep-recon -scan <path to manifest file> [-keywords <path to keywords file> -cache <path to cache directory>]
+./dep-recon -scan <path to manifest file> [-keywords <path to keywords file> -cache <path to cache directory> -ai -ai-examples <path to ai examples file> -format [json|text]]
 ```

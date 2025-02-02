@@ -7,12 +7,12 @@ import (
 )
 
 func TestPullRustDependencyReadme(t *testing.T) {
-	expected_readme := "This is the readme for the package"
+	expectedReadme := "This is the readme for the package"
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		if r.URL.Path != "/api/v1/crates/glob/0.3.1/readme" {
 			t.Errorf("got %q, want %q", r.URL.Path, "/api/v1/crates/glob/0.3.1/readme")
 		}
-		w.Write([]byte(expected_readme))
+		w.Write([]byte(expectedReadme))
 	}))
 	rust := Rust{
 		RegistryURL:        server.URL,
@@ -22,8 +22,8 @@ func TestPullRustDependencyReadme(t *testing.T) {
 	if err != nil {
 		t.Errorf("Unexpected error: %s", err)
 	}
-	if readme != expected_readme {
-		t.Errorf("Expected %s, got %s", expected_readme, readme)
+	if readme != expectedReadme {
+		t.Errorf("Expected %s, got %s", expectedReadme, readme)
 	}
 }
 

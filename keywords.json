@@ -1,8 +1,8 @@
 {
-	"Authorization": ["access control", "permissions", "roles", "authorization"],
-	"Cryptography": ["encryption", "decryption", "hashing", "cryptography", "cipher"],
-	"Authentication": ["login", "authentication", "auth", "identity", "credentials"],
-	"Rendering": ["render", "rendering", "display", "UI", "HTML"],
-	"Network Requests": ["HTTP", "request", "response", "API", "network"],
-	"Data Storage": ["database", "storage", "cache"]
+	"authorization": ["access control", "permissions", "roles", "authorize", "rbac", "authorization"],
+	"cryptography": ["encryption", "decryption", "hashing", "cryptograph", "cipher"],
+	"authentication": ["login", "authentication", "auth", "identity", "credentials"],
+	"rendering": ["render", "rendering", "display", "UI", "HTML", "template"],
+	"network requests": ["HTTP", "request", "response", "API", "network"],
+	"data storage": ["database", "storage", "cache"]
 }

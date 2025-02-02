@@ -79,7 +79,7 @@ func (g Golang) ListDependencies() (DependencyList, error) {
 		return DependencyList{}, err
 	}
 	defer file.Close()
-	mod_regex := regexp.MustCompile(`([\w.\-/]+)\s+(v[\d+.\-a-zA-Z]+)`)
+	modRegex := regexp.MustCompile(`([\w.\-/]+)\s+(v[\d+.\-a-zA-Z]+)`)
 	depList := DependencyList{
 		DevDependencies: map[string]string{},
 		Dependencies:    map[string]string{},
@@ -91,7 +91,7 @@ func (g Golang) ListDependencies() (DependencyList, error) {
 		if strings.Contains(line, "// indirect") {
 			continue
 		}
-		match := mod_regex.FindStringSubmatch(line)
+		match := modRegex.FindStringSubmatch(line)
 		if match == nil {
 			continue
 		}

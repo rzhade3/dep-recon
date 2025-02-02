@@ -8,7 +8,7 @@ import (
 
 func TestPullNpmReadme(t *testing.T) {
 	mockResponse := `{"readme": "This is the readme for the package"}`
-	expected_readme := "This is the readme for the package"
+	expectedReadme := "This is the readme for the package"
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Check the request
 		if r.URL.Path != "/express" {
@@ -25,8 +25,8 @@ func TestPullNpmReadme(t *testing.T) {
 	if err != nil {
 		t.Errorf("unexpected error: %v", err)
 	}
-	if readme != expected_readme {
-		t.Errorf("Expected %s, got %s", expected_readme, readme)
+	if readme != expectedReadme {
+		t.Errorf("Expected %s, got %s", expectedReadme, readme)
 	}
 }
 
